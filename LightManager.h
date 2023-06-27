@@ -8,9 +8,9 @@ enum DelayUnits = {MS = 0, US = 1}
 
 class Light {
     private:
-        uint8_t TRIGGER_PIN
-        uint8_t TRIGGER_MODE
-        uint8_t ANALOG_PIN
+        uint8_t TRIGGER_PIN;
+        uint8_t TRIGGER_MODE;
+        uint8_t ANALOG_PIN;
     public:
         void init(uint8_t triggerPin, TriggerType triggerMode = PNP, uint8_t analogPin = NULL);
         void lightOn();
