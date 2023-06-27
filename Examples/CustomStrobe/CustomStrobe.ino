@@ -20,6 +20,8 @@
  by Matthew J. Reynolds
 
  This example code is in the public domain.
+
+ https://github.com/Smart-Vision-Lights/Arduino-LightManager
 */
 
 // include the library code:
