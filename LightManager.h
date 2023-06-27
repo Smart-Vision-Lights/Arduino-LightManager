@@ -3,16 +3,22 @@
 
 #include <Arduino.h>
 
-enum TriggerType = {PNP = 0, NPN = 1}
-enum DelayUnits = {MS = 0, US = 1}
+enum TriggerType {
+    PNP = 0,
+    NPN = 1
+};
+enum DelayUnits {
+    MS = 0,
+    US = 1
+};
 
-class Light {
+class LightManager {
     private:
         uint8_t TRIGGER_PIN;
         uint8_t TRIGGER_MODE;
         uint8_t ANALOG_PIN;
     public:
-        void init(uint8_t triggerPin, TriggerType triggerMode = PNP, uint8_t analogPin = NULL);
+        LightManager(int triggerPin, TriggerType triggerMode = PNP, int analogPin = NULL);
         void lightOn();
         void lightOff();
         void strobe(int numberOfStrobes, int onTime, int offTime, DelayUnits units = MS);
@@ -20,6 +26,6 @@ class Light {
         void setTriggerPin(uint8_t triggerPin);
         void setAnalogPin(uint8_t analogPin);
         uint8_t getTriggerPin();
-}
+};
 
 #endif

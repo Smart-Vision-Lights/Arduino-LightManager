@@ -1,6 +1,6 @@
 #include "LightManager.h"
 
-LightManager::init(uint8_t triggerPin, TriggerType triggerMode = PNP, uint8_t analogPin = NULL) {
+LightManager::LightManager(int triggerPin, TriggerType triggerMode = PNP, int analogPin = NULL) {
     TRIGGER_PIN = triggerPin;
     TRIGGER_MODE = triggerMode;
     if (analogPin != NULL) ANALOG_PIN = analogPin;
