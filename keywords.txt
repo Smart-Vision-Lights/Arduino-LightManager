@@ -1,0 +1,25 @@
+#######################################
+# Syntax Coloring Map For LightManager
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Light	KEYWORD1	Light
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+lightOn    KEYWORD2
+lightOff    KEYWORD2
+strobe    KEYWORD2
+setAnalogLevel    KEYWORD2
+setTriggerPin    KEYWORD2
+setAnalogPin    KEYWORD2
+getTriggerPin    KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
