@@ -1,29 +1,31 @@
 #include "LightManager.h"
 
-LightManager::LightManager(int triggerPin, TriggerType triggerMode = PNP, int analogPin = NULL) {
+LightManager::LightManager(uint8_t triggerPin, uint8_t triggerMode = PNP, uint8_t analogPin = NULL) {
     TRIGGER_PIN = triggerPin;
     TRIGGER_MODE = triggerMode;
     if (analogPin != NULL) ANALOG_PIN = analogPin;
     digitalWrite(TRIGGER_PIN, LOW);
 }
 
-LightManager::lightOn() {
+void LightManager::lightOn() {
     digitalWrite(TRIGGER_PIN, HIGH);
 }
 
-LightManager::lightOff() {
+void LightManager::lightOff() {
     digitalWrite(TRIGGER_PIN, LOW);
 }
 
-LightManager::strobe(int numberOfStrobes, int onTime, int offTime, DelayUnits units = MS) {
+void LightManager::strobe(int numberOfStrobes, int onTime, int offTime, uint8_t units = MILLIS) {
     for (int x = 0; x < numberOfStrobes; x++) {
         lightOn();
-        if (units == MS)
-            delay(onTime);
-        else
-            delayMicroseconds(onTime);
+        if (units == MILLIS) {
+            delay(offTime);
+        }
+        else{
+            delayMicroseconds(offTime);
+        }
         lightOff();
-        if (units == MS) {
+        if (units == MILLIS) {
             delay(offTime);
         }
         else{
@@ -32,21 +34,21 @@ LightManager::strobe(int numberOfStrobes, int onTime, int offTime, DelayUnits un
     }
 }
 
-LightManager::setAnalogLevel(uint8_t level) {
+void LightManager::setAnalogLevel(uint8_t level) {
     analogWrite(ANALOG_PIN, level);
 }
 
-LightManager::setTriggerPin(uint8_t triggerPin) {
+void LightManager::setTriggerPin(uint8_t triggerPin) {
     TRIGGER_PIN = triggerPin;
     pinMode(TRIGGER_PIN, OUTPUT);
     digitalWrite(TRIGGER_PIN, LOW);
 }
 
-LightManager::setAnalogPin(uint8_t analogPin) {
+void LightManager::setAnalogPin(uint8_t analogPin) {
     ANALOG_PIN = analogPin;
     analogWrite(ANALOG_PIN, 255);
 }
 
-LightManager::getTriggerPin() {
+uint8_t LightManager::getTriggerPin() {
     return TRIGGER_PIN;
 }
