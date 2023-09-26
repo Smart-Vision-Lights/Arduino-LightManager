@@ -1,12 +1,24 @@
-= Light Manager Library for Arduino =
+# Light Manager Library for Arduino 
 
-Makes controlling lights with an Arduino IDE compatible devices easier by providing pre-made methods for controlling lights such as lightOn, lightOff, and strobe. 
+LightManager makes controlling lights with an Arduino IDE compatible devices easy by providing pre-made methods for controlling lights.
+
+Methods:
+- lightOn
+- lightOff
+- strobe
+
+## Installation 
+To install the library:
+
+1. Download the .zip folder attached to the latest release. **DO NOT UNZIP THE FOLDER!**
+2. Open the sketch you want to include the library in.
+3. Select 'add a .zip library' (Sketch -> Include library -> Add a .zip library).
+4. Select the .zip from the location you downloaded it to.
 
 For more information about our products, please visit
 https://smartvisionlights.com
 
-== License ==
-
+## License 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
 License as published by the Free Software Foundation; either
